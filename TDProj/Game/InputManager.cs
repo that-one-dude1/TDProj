@@ -15,9 +15,14 @@ namespace TDProj
         public MouseState previousMouse;
         public MouseState CurrentMouse { get; private set; }
 
+        public KeyboardState previousKeyboard;
+        public KeyboardState CurrentKeyboard { get; private set; }
+
         public Point HoveredCell { get; private set; }
         public bool MouseInsideGrid { get; private set; }
         public bool LeftClicked { get; private set; }
+        public bool UpgradePressed { get; private set; }
+        public bool ExitPressed { get; private set; }
         public Point MousePosition => new(CurrentMouse.X, CurrentMouse.Y);
 
         public Point cell;
@@ -29,9 +34,10 @@ namespace TDProj
             this.grid = grid;
         }
 
-        public void Update(MouseState mouse)
+        public void Update(MouseState mouse, KeyboardState keyboard)
         {
             CurrentMouse = mouse;
+            CurrentKeyboard = keyboard;
 
             int cellX = mouse.X / grid.CellSize;
             int cellY = mouse.Y / grid.CellSize;
@@ -42,6 +48,10 @@ namespace TDProj
                 HoveredCell = cell;
 
             LeftClicked = mouse.LeftButton == ButtonState.Pressed && previousMouse.LeftButton == ButtonState.Released;
+            UpgradePressed = keyboard.IsKeyDown(Keys.U) && previousKeyboard.IsKeyUp(Keys.U);
+            ExitPressed = keyboard.IsKeyDown(Keys.Escape) && previousKeyboard.IsKeyUp(Keys.Escape);
+
+            previousKeyboard = keyboard;
             previousMouse = mouse;
         }
     }
