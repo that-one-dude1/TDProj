@@ -1,0 +1,44 @@
+OLD ERRORS (fixed)
+
+- Triangle overshoots intended cell position
+- Towers completely miss enemies
+- Possible to go in to debt
+- Order of constructors causing errors
+- Towers being placed in the top left corner
+- Tower UI only appears when pressing the tower and not the cell which contains it
+- Range indicator shows up on any tower press, not only when drawing the tower ui
+- Sell doesn't include the money spent on upgrades
+- Game believes that cell is always occupied after tower sell
+- Upgrade out scales the cell size
+- Tower slightly off centre
+- Menu allowed selection even if the mouse wasn't on the button
+- Hitbox on menu text in wrong place
+- Passing in wrong index for the text bounds in the menu
+- Drawing rectangles for menu buttons in wrong place
+- Waves give way too much money, earn is called every update
+- Accidentally used the wrong selected tower (towerManager.SelectedTower not uiManager.selectedTowerType)
+- Sell refund was total of all towers ever placed, not of the individual tower
+- Projectile went under any towers placed after the source tower
+- Projectile updated twice per second
+- Tower UI not opening properly
+- Towers both simultaneously able to be selected behind the ui and not selected at all
+- Instructions menu able to be opened whilst playing
+- Game crashes when attempting to save
+- Game can't find wave file
+- Wave skips after spawning a couple enemies
+
+ERRORS
+
+- Game bricks after wave 10
+
+TODO
+
+- Add multiple maps
+- Make UI better
+- Add wave loop (infinite mode?)
+- Change background for different maps
+- Game speed
+- Improve existing menu
+- Add more enemies + towers
+- Add external upgrades
+- Add achievements?

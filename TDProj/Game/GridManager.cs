@@ -42,17 +42,15 @@ namespace TDProj
 
         public bool IsInsideGrid(Point p) => p.X >= 0 && p.X < width && p.Y >= 0 && p.Y < height;
 
-        public void Draw(SpriteBatch spriteBatch, Texture2D pixel, Point hoveredCell, bool mouseInsideGrid)
+        public void Draw(SpriteBatch spriteBatch, Texture2D pixel, Point hoveredCell, bool mouseInsideGrid, bool isGamePaused)
         {
             for (int y = 0; y < height; y++)
                 for (int x = 0; x < width; x++)
                 {
                     Rectangle cellRect = new(x * cellSize, y * cellSize, cellSize, cellSize);
-                    if (grid[x, y] == CellType.Path)
-                        spriteBatch.Draw(pixel, cellRect, Color.Red * 0.5f);
                 }
 
-            if (mouseInsideGrid)
+            if (mouseInsideGrid && !isGamePaused)
             {
                 Rectangle highlight = new(hoveredCell.X * cellSize, hoveredCell.Y * cellSize, cellSize, cellSize);
                 spriteBatch.Draw(pixel, highlight, Color.Cyan * 0.3f);

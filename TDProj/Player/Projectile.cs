@@ -41,7 +41,7 @@ namespace TDProj
             Vector2 toTarget = target.position - position;
             float distance = toTarget.Length();
 
-            if (distance < 10f)
+            if (distance < 25f)
             {
                 target.TakeDamage(damage);
                 active = false;
