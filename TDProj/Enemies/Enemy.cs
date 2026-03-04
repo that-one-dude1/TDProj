@@ -98,6 +98,13 @@ namespace TDProj
             playerResources.LoseLife(1); //lose 1 life per enemy that reaches the end (change with enemy type later)
         }
 
+        public void HandleReachedEnd()
+        {
+            ReachedEnd = true;
+            health = 0; //enemy is considered dead when it reaches the end
+            playerResources.LoseLife(1); //lose 1 life per enemy that reaches the end (change with enemy type later)
+        }
+
         public void TakeDamage(float dmg)
         {
             health -= dmg;

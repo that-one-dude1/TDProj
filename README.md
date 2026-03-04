@@ -1,2 +1,2 @@
 # TDProj
-A terribly made monogame Tower Defence
+A roughly made Monogame Tower Defence.

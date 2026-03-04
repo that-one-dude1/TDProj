@@ -13,6 +13,7 @@ namespace TDProj
     public class Projectile
     {
         private Vector2 position;
+        private Enemy target;
         private float speed;
         private float damage;
         private bool active = true;
@@ -26,6 +27,7 @@ namespace TDProj
         public Projectile(Vector2 start, Vector2 targetPosition, float speed, float damage, Texture2D texture)
         {
             position = start;
+            this.target = target;
             this.speed = speed;
             this.damage = damage;
             this.texture = texture;
@@ -51,7 +53,7 @@ namespace TDProj
                 float distance = toEnemy.Length();
 
                 if (distance < 40f)
-                {
+            {
                     float damageDealt = Math.Min(damage, enemy.health);
                     damage -= damageDealt;
                     enemy.TakeDamage(damageDealt);

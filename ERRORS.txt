@@ -21,9 +21,11 @@ OLD ERRORS (fixed)
 - Projectile went under any towers placed after the source tower
 - Projectile updated twice per second
 - Tower UI not opening properly
-- Towers both simultaneously able to be selected be behind the ui and not selected at all
+- Towers both simultaneously able to be selected behind the ui and not selected at all
 - Instructions menu able to be opened whilst playing
 - Game crashes when attempting to save
+- Game can't find wave file
+- Wave skips after spawning a couple enemies
 
 ERRORS
 

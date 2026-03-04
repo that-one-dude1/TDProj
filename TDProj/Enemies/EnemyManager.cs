@@ -123,6 +123,8 @@ namespace TDProj
             //if (currentWaveIndex >= waves.Count)
             //    return;
 
+            enemiesSpawned = spawner.totalEnemiesSpawned;
+
             if (!waveActive)
             {
                 if (!waveMoneyEarned)
@@ -167,6 +169,7 @@ namespace TDProj
             waveActive = false;
             waveMoneyEarned = false;
             enemiesSpawned = 0;
+            spawner.totalEnemiesSpawned = 0;
             spawnTimer = 0f;
             waveDelayTimer = 0f;
             spawner.totalSpawnNum = 0;
@@ -181,6 +184,7 @@ namespace TDProj
             waveActive = false;
             waveMoneyEarned = true;
             enemiesSpawned = 0;
+            spawner.totalEnemiesSpawned = 0;
             spawnTimer = 0f;
             waveDelayTimer = 0f;
             spawner.totalSpawnNum = 0;
@@ -197,6 +201,7 @@ namespace TDProj
             uiManager.drawEndWaveText = false;
             saveLoaded = false;
             enemiesSpawned = 0;
+            spawner.totalEnemiesSpawned = 0;
             spawnTimer = 0f;
             spawner.totalSpawnNum = 0;
 
